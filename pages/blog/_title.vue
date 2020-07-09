@@ -25,7 +25,10 @@
       </ul>
     </nav>
     <div class="content">
-      <h1 class="text-4xl font-bold mb-4">DETAIL BLOG</h1>
+      <h1 class="text-4xl font-bold mb-4">{{ result.title }}</h1>
+      <p><i class="la la-calendar"></i> {{ $moment(result.createdAt).format('dddd, DD MMMM YYYY') }}</p>
+      <br />
+      <nuxt-content :document="result" />
     </div>
     <footer class="text-center p-5 justify-center w-full">
       &copy; 2020 Irham Nur Fathoni. Powered By
@@ -36,8 +39,13 @@
 
 <script>
 export default {
-  created() {
-    console.log(this.$route.params.title)
-  }
+  async asyncData ({ $content, params }) {
+    const detailPage = await $content('blog').where({ 'slug': params.title }).fetch()
+    const result = detailPage[0]
+
+    return {
+      result
+    }
+  }  
 }
 </script>
