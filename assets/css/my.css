@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+body {
+  background-color: #323232;
+}
+
+.wrapper {
+  @apply w-10/12 min-h-screen flex flex-col mx-auto;
+}
+
+.content-home {
+  @apply w-full flex flex-1 flex-col items-center justify-center;
+}
+
+.content-home .profile-img {
+  @apply bg-black rounded-full mt-16 overflow-hidden shadow-lg;
+  width: 160px;
+  height: 160px;
+}
+
+.content-home .profile-img img {
+  @apply object-cover;
+}
+
+.content-home .nav {
+  @apply flex flex-row;
+}
+
+.content-home .nav > .nav-item {
+  @apply font-bold mx-6;
+}
+
+.content-home .nav > .nav-item.active {
+  border-bottom: solid 3px #ffffff;
+}
+
+.content-home .social-group {
+  @apply flex flex-row mb-24;
+}
+
+.content-home .social-group .social-link {
+  @apply flex items-stretch justify-center px-3 py-3 rounded-full mx-2 text-3xl shadow-lg;
+  background: #424242;
+}
+
+.content {
+  @apply flex flex-col flex-1;
+}
+
+.nav-menu {
+  @apply flex flex-row w-full justify-end mt-6 mb-16;
+}
+
+.nav-menu ul {
+  @apply flex flex-row;
+}
+
+.nav-menu ul li {
+  @apply font-bold ml-6;
+}
+
+.nav-menu li a.active {
+  border-bottom: solid 3px #ffffff;
+}

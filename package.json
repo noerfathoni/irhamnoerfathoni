@@ -10,9 +10,11 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.11.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^2.0.0",
     "nodemon": "^1.18.9"
   }
 }

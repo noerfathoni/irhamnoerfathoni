@@ -23,15 +23,31 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '~assets/icon/line-awesome/css/line-awesome.min.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
   /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss',
+  ],
+  /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
    ** Build configuration
    */
