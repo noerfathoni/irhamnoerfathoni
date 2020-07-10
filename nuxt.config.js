@@ -46,6 +46,9 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+  server: {
+    port: 3000, // default: 3000
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

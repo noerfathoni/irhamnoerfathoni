@@ -1,29 +1,6 @@
 <template>
   <div class="wrapper">
-    <nav class="nav-menu">
-      <ul>
-        <li>
-          <nuxt-link to="/" active-class="active" exact>
-            HOME
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/projects" active-class="active">
-            PROJECTS
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/about" active-class="active">
-            ABOUT
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/blog" active-class="active">
-            BLOG
-          </nuxt-link>
-        </li>
-      </ul>
-    </nav>
+    <Navbar />
     <div class="content">
       <h1 class="text-4xl font-bold mb-4">{{ result.title }}</h1>
       <p><i class="la la-calendar"></i> {{ $moment(result.createdAt).format('dddd, DD MMMM YYYY') }}</p>
@@ -38,7 +15,12 @@
 </template>
 
 <script>
+import Navbar from '~/components/Navbar.vue'
+
 export default {
+  components: {
+    Navbar
+  },
   async asyncData ({ $content, params }) {
     const detailPage = await $content('blog').where({ 'slug': params.title }).fetch()
     const result = detailPage[0]
@@ -46,6 +28,11 @@ export default {
     return {
       result
     }
-  }  
+  }  ,
+  head () {
+    return {
+      title: this.result.title,
+    }
+  }
 }
 </script>
